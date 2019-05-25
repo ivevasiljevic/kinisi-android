@@ -1,7 +1,8 @@
-package com.lution.kinisi
+package com.lution.kinisi.views.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.lution.kinisi.R
 
 class MainActivity : AppCompatActivity() {
 
