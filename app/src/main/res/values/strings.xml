@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Kinisi</string>
+    
+    <!-- text inputs labels -->
+    <string name="label_firstname">Firstname</string>
+    <string name="label_lastname">Lastname</string>
+    <string name="label_email">Email</string>
+    <string name="label_gender">Gender</string>
+
+    <!-- button text -->
+    <string name="button_text_login">Login</string>
+    <string name="button_text_register">Register</string>
 </resources>
