@@ -8,5 +8,5 @@ import com.lution.kinisi.R
  * Created by ivasil on 5/26/2019
  */
 
-class ExposedDropdownMenuPopupItemAdapter(context: Context, viewId: Int, genders: ArrayList<String>) :
+class ExposedDropdownMenuPopupItemAdapter(context: Context, viewId: Int, genders: ArrayList<String> = arrayListOf("Male", "Female", "Other")) :
     ArrayAdapter<String>(context, viewId, genders)
