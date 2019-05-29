@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- common spacings -->
+    <dimen name="spacing_normal">10dp</dimen>
+    <dimen name="spacing_normal_semi">15dp</dimen>
+    <dimen name="spacing_double">20dp</dimen>
+    <dimen name="spacing_double_semi">25dp</dimen>
+    <dimen name="spacing_triple">30dp</dimen>
+</resources>
