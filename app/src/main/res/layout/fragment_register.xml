@@ -17,7 +17,7 @@
     >
 
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputFirstname"
+                android:id="@+id/textInputFullname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/label_firstname"
@@ -25,24 +25,7 @@
         >
 
             <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextFirstname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-            />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLastname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/label_lastname"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        >
-
-            <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextLastname"
+                    android:id="@+id/editTextFullname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"

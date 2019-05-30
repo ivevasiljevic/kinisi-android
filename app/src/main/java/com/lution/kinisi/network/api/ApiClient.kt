@@ -12,14 +12,14 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  * Created by ivasil on 5/29/2019
  */
 
-object Api {
+object ApiClient {
 
     val apiClient by lazy {
 
         createRetrofitClient()
     }
 
-    private fun createRetrofitClient(): AdiServiceUserManagement {
+    private fun createRetrofitClient(): ApiServiceUserManagement {
 
        return Retrofit.Builder()
             .baseUrl(BuildConfig.API_BASE_ENDPOINT)
@@ -27,7 +27,7 @@ object Api {
             .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
-            .create(AdiServiceUserManagement::class.java)
+            .create(ApiServiceUserManagement::class.java)
     }
 
     private fun createOkHttpClient(): OkHttpClient {

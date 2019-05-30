@@ -9,13 +9,13 @@ import kotlinx.coroutines.launch
 
 class RegisterViewModel: BaseViewModel() {
 
-    fun registerUser(email: String, firstname: String, lastname: String, gender: String,
+    fun registerUser(email: String, fullname: String, gender: String,
                      password: String, repeatPassword: String) {
 
         launch {
 
             statusCode.postValue(UserManagementRepository.registerRequest(
-                email, firstname, lastname, gender, password, repeatPassword
+                email, fullname, gender, password, repeatPassword
             ))
         }
     }

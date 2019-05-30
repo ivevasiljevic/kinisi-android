@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 
 import com.lution.kinisi.R
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.fragment_register.*
 class RegisterFragment : Fragment() {
 
     private lateinit var validator: Validator
-    lateinit var registerViewModel: RegisterViewModel
+    private val registerViewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_register, container, false)
@@ -28,14 +29,7 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        registerViewModel = RegisterViewModel()
         validator = Validator()
-        setDropdownMenuPopupItemAdapter()
-
-        registerButton.setOnClickListener {
-
-            makeRegisterRequest()
-        }
 
         registerViewModel.statusCode.observe(viewLifecycleOwner, Observer {
 
@@ -48,6 +42,13 @@ class RegisterFragment : Fragment() {
                 registerScreenLayout.snackbar("User failed to register")
             }
         })
+
+        setDropdownMenuPopupItemAdapter()
+
+        registerButton.setOnClickListener {
+
+            makeRegisterRequest()
+        }
     }
 
     private fun setDropdownMenuPopupItemAdapter() {
@@ -60,12 +61,11 @@ class RegisterFragment : Fragment() {
         if(validateUserBasicInputs() && validateUserEmail() && validateUserPassword()) {
 
             registerViewModel.registerUser(
-                editTextEmail.text.toString(),
-                editTextFirstname.text.toString(),
-                editTextLastname.text.toString(),
-                exposedDropdownMenu.text.toString(),
-                editTextPassword.text.toString(),
-                editTextRepeatPassword.text.toString()
+                email = editTextEmail.text.toString(),
+                fullname = editTextFullname.text.toString(),
+                gender = exposedDropdownMenu.text.toString(),
+                password = editTextPassword.text.toString(),
+                repeatPassword = editTextRepeatPassword.text.toString()
             )
         }
     }
@@ -83,7 +83,6 @@ class RegisterFragment : Fragment() {
 
     private fun validateUserBasicInputs(): Boolean {
 
-        return validator.validate(editTextFirstname, textInputFirstname, arrayListOf(BasicValidator()))
-                && validator.validate(editTextLastname, textInputLastname, arrayListOf(BasicValidator()))
+        return validator.validate(editTextFullname, textInputFullname, arrayListOf(BasicValidator()))
     }
 }

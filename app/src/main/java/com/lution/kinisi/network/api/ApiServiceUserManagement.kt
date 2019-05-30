@@ -12,7 +12,7 @@ import retrofit2.http.POST
  * Created by ivasil on 5/29/2019
  */
 
-interface AdiServiceUserManagement {
+interface ApiServiceUserManagement {
 
     @POST("users")
     fun registerUser(@Body registerUserRequest: RegisterUserRequest) : Deferred<Response<RegisterUserResponse>>

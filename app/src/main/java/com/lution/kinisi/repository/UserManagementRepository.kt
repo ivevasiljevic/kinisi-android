@@ -1,6 +1,6 @@
 package com.lution.kinisi.repository
 
-import com.lution.kinisi.network.api.Api
+import com.lution.kinisi.network.api.ApiClient
 import com.lution.kinisi.network.model.request.RegisterUserRequest
 
 /**
@@ -9,14 +9,13 @@ import com.lution.kinisi.network.model.request.RegisterUserRequest
 
 object UserManagementRepository {
 
-    suspend fun registerRequest(email: String, firstname: String, lastname: String, gender: String,
+    suspend fun registerRequest(email: String, fullname: String, gender: String,
                                 password: String, repeatPassword: String): Int {
 
-        val response = Api.apiClient.registerUser(
+        val response = ApiClient.apiClient.registerUser(
             RegisterUserRequest(
                 email = email,
-                firstname = firstname,
-                lastname = lastname,
+                fullname = fullname,
                 gender = gender,
                 password = password,
                 repeatPassword = repeatPassword
